@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@clack/prompts':
+        specifier: ^1.1.0
+        version: 1.1.0
       '@effect/cli':
         specifier: ^0.74.0
         version: 0.74.0(@effect/platform@0.95.0(effect@3.20.0))(@effect/printer-ansi@0.48.0(@effect/typeclass@0.39.0(effect@3.20.0))(effect@3.20.0))(@effect/printer@0.48.0(@effect/typeclass@0.39.0(effect@3.20.0))(effect@3.20.0))(effect@3.20.0)
@@ -50,6 +53,12 @@ importers:
         version: 3.2.4(@types/node@25.5.0)(tsx@4.21.0)(yaml@2.8.2)
 
 packages:
+
+  '@clack/core@1.1.0':
+    resolution: {integrity: sha512-SVcm4Dqm2ukn64/8Gub2wnlA5nS2iWJyCkdNHcvNHPIeBTGojpdJ+9cZKwLfmqy7irD4N5qLteSilJlE0WLAtA==}
+
+  '@clack/prompts@1.1.0':
+    resolution: {integrity: sha512-pkqbPGtohJAvm4Dphs2M8xE29ggupihHdy1x84HNojZuMtFsHiUlRvqD24tM2+XmI+61LlfNceM3Wr7U5QES5g==}
 
   '@effect/cli@0.74.0':
     resolution: {integrity: sha512-vjMJWJWQ2zMRVcZJj2ZGr7vFgVoX6lsCuqAsNiN2ndWZAidkEJ6g1Euuib2V2nTXeWvRyd3FY2Fw2UvX48Uenw==}
@@ -775,6 +784,9 @@ packages:
   siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
 
+  sisteransi@1.0.5:
+    resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -937,6 +949,15 @@ packages:
     hasBin: true
 
 snapshots:
+
+  '@clack/core@1.1.0':
+    dependencies:
+      sisteransi: 1.0.5
+
+  '@clack/prompts@1.1.0':
+    dependencies:
+      '@clack/core': 1.1.0
+      sisteransi: 1.0.5
 
   '@effect/cli@0.74.0(@effect/platform@0.95.0(effect@3.20.0))(@effect/printer-ansi@0.48.0(@effect/typeclass@0.39.0(effect@3.20.0))(effect@3.20.0))(@effect/printer@0.48.0(@effect/typeclass@0.39.0(effect@3.20.0))(effect@3.20.0))(effect@3.20.0)':
     dependencies:
@@ -1535,6 +1556,8 @@ snapshots:
       kind-of: 6.0.3
 
   siginfo@2.0.0: {}
+
+  sisteransi@1.0.5: {}
 
   source-map-js@1.2.1: {}
 
