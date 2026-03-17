@@ -24,7 +24,7 @@ export const clone = (url: string, targetDir: string) =>
 export const pull = (repoDir: string) =>
   Effect.try({
     try: () => {
-      execSync("git pull", { cwd: repoDir, stdio: "pipe" })
+      execSync("git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)", { cwd: repoDir, stdio: "pipe", shell: "/bin/sh" })
     },
     catch: (e) =>
       new GitError(`Git pull failed: ${e instanceof Error ? e.message : String(e)}`),
